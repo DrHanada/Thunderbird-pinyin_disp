@@ -1,0 +1,9 @@
+{
+  "name": {
+    "message": "Thunderbird Pinyin Display",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Show pinyin for selected Simplified Chinese text in email messages."
+  }
+}

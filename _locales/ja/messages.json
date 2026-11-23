@@ -1,0 +1,9 @@
+{
+  "name": {
+    "message": "Thunderbird Pinyin Display",
+    "description": "アドオン名"
+  },
+  "extensionDescription": {
+    "message": "メール本文で選択した簡体字中国語のピンインを表示します。"
+  }
+}

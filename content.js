@@ -1,5 +1,5 @@
 (() => {
-  // メール本文に複数回初期化されてもポップアップを重複作成しない
+  // Avoid creating duplicate popups if the script is initialized more than once.
   if (window.__thunderbirdPinyinDisplayInitialized) {
     return;
   }
@@ -36,7 +36,7 @@
   function getPinyin(text) {
     const library = globalThis.pinyinPro;
     if (!library || typeof library.pinyin !== "function") {
-      throw new Error("pinyin-pro が読み込まれていません");
+      throw new Error("The pinyin-pro library could not be loaded.");
     }
     return library.pinyin(text, { toneType: "symbol" });
   }
@@ -45,7 +45,7 @@
     const selection = window.getSelection();
     const text = selection ? selection.toString().trim() : "";
 
-    // 長すぎる選択や漢字を含まない選択には反応しない
+    // Ignore very long selections and selections without Han characters.
     if (!text || text.length > 120 || !/\p{Script=Han}/u.test(text)) {
       host.style.display = "none";
       return;
@@ -83,7 +83,7 @@
     host.style.display = "block";
     host.style.left = `${Math.max(margin, Math.min(rect.left, window.innerWidth - 440))}px`;
 
-    // 表示後に高さを測り、画面下端からはみ出す場合は選択範囲の上に出す
+    // Place the popup above the selection if there is not enough room below.
     const popupHeight = host.getBoundingClientRect().height;
     const top = rect.bottom + 8 + popupHeight < window.innerHeight
       ? rect.bottom + 8

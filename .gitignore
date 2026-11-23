@@ -1,4 +1,3 @@
-vendor/pinyin-pro.js
-vendor/PINYIN-PRO-LICENSE.txt
-vendor/PINYIN-PRO-DATA-LICENSE.txt
+node_modules/
+dist/
 thunderbird-pinyin-display-*.xpi

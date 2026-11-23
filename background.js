@@ -2,7 +2,7 @@ const api = globalThis.messenger ?? globalThis.browser;
 
 if (!api?.messageDisplayScripts) {
   console.error(
-    "Pinyin Display: messageDisplayScripts API が利用できません。",
+    "Pinyin Display: messageDisplayScripts API is unavailable.",
     { messenger: typeof globalThis.messenger, browser: typeof globalThis.browser }
   );
 } else {
@@ -12,6 +12,6 @@ if (!api?.messageDisplayScripts) {
       { file: "content.js" }
     ]
   }).catch((error) => {
-    console.error("Pinyin Display: スクリプトを登録できませんでした。", error);
+    console.error("Pinyin Display: Could not register message scripts.", error);
   });
 }
