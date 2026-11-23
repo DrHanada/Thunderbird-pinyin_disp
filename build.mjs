@@ -30,6 +30,8 @@ async function copyTree(source, destination) {
 
 await copyTree(path.join(root, "_locales"), path.join(dist, "_locales"));
 
+await copyTree(path.join(root, "icons"), path.join(dist, "icons"));
+
 // Bundle the declared npm dependency into the runtime file shipped in the XPI.
 await build({
   entryPoints: [path.join(root, "node_modules", "pinyin-pro", "dist", "index.js")],

@@ -1,0 +1,33 @@
+name: Build Thunderbird XPI
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+
+      - name: Upload XPI and lockfile
+        uses: actions/upload-artifact@v4
+        with:
+          name: thunderbird-pinyin-display-0.1.1-submission
+          path: |
+            dist/*.xpi
+            package-lock.json
