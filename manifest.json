@@ -4,6 +4,11 @@
   "description": "__MSG_extensionDescription__",
   "version": "0.1.1",
   "default_locale": "en",
+  "icons": {
+    "32": "icons/icon-32.png",
+    "64": "icons/icon-64.png",
+    "128": "icons/icon-128.png"
+  },
   "permissions": ["messagesModify"],
   "background": {
     "scripts": ["background.js"]
