@@ -4,7 +4,7 @@ Thunderbird add-on that displays pinyin for selected Simplified Chinese text in 
 
 ## Release and compatibility
 
-- Current add-on version: `0.1.2`.
+- Current add-on version: `0.1.1`.
 - User-tested with Thunderbird 160.0 (64-bit).
 - English is the default locale; Japanese localization is included.
 - The add-on icon is provided in `icons/` and declared in `manifest.json`.
